@@ -6,7 +6,7 @@ export default defineConfig({
 	test: {
 		coverage: {
 			enabled: true,
-			provider: "c8",
+			provider: "v8",
 			reporter: ["html", "text"],
 			reportsDirectory: "./src/tests/coverage",
 		},
