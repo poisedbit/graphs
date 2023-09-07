@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { step } from "$lib/scripts/store";
-	import BtnNext from "./BtnNext.svelte";
-	import FileDropzone from "./FileDropzone.svelte";
+	import BtnNext from "./components/BtnNext.svelte";
+	import FileDropzone from "./components/FileDropzone.svelte";
 </script>
 
 <article>

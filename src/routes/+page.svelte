@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThreeStep from "$lib/components/ThreeStep.svelte";
+	import GraphingTool from "$lib/graphing-tool/index.svelte";
 </script>
 
 <!--
@@ -11,7 +11,7 @@
 	<h1>Graphs</h1>
 </header>
 <main>
-	<ThreeStep />
+	<GraphingTool />
 </main>
 
 <style lang="scss">
