@@ -1,28 +1,15 @@
 <script lang="ts">
-	import { spreadsheet_files } from "$lib/scripts/store";
+	import { sprdsht_files_handler } from "$lib/scripts/store_handlers";
+	import { sprdsht_files } from "$lib/scripts/store";
 	import FileItem from "./FileItem.svelte";
 
 	let files: FileList;
 
 	$: if (files) {
-		spreadsheet_files.update(arr =>
-			[...arr, ...Array.from(files)].filter(
-				(file, index, self) =>
-					index ===
-					self.findIndex(
-						f =>
-							f.name === file.name &&
-							f.size === file.size &&
-							f.type === file.type &&
-							f.lastModified === file.lastModified
-					)
-			)
-		);
-
-		console.log($spreadsheet_files);
+		sprdsht_files_handler.up(files);
 	}
 
-	$: files_len = $spreadsheet_files.length;
+	$: files_len = $sprdsht_files.length;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -40,7 +27,7 @@
 >
 	{#if files_len}
 		<div class="file-dz__item-container">
-			{#each $spreadsheet_files as item}
+			{#each $sprdsht_files as item}
 				<FileItem {item} />
 			{/each}
 		</div>

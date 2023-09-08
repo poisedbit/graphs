@@ -1,26 +1,30 @@
 <script lang="ts">
 	import { step } from "$lib/scripts/store";
+	import { step_handler } from "$lib/scripts/store_handlers";
+	import { onMount } from "svelte";
 	import BtnNext from "./components/BtnNext.svelte";
 	import FilePicker from "./components/FilePicker.svelte";
+
+	onMount(() => step_handler.rst());
 </script>
 
 <article>
-	<section>
-		<div>1— Choose files</div>
-		{#if $step === 1}
+	{#if !$step}
+		<section>
+			<div>1— Choose files</div>
 			<FilePicker />
 			<BtnNext />
-		{/if}
-	</section>
-	<section>
-		<div>2— Select chart type</div>
-		{#if $step === 2}
+		</section>
+	{:else if $step === 1}
+		<section>
+			<div>2— Select chart type</div>
 			<BtnNext />
-		{/if}
-	</section>
-	<section>
-		<div>3— Visualize and/or export!</div>
-	</section>
+		</section>
+	{:else if $step === 2}
+		<section>
+			<div>3— Visualize and/or export!</div>
+		</section>
+	{/if}
 </article>
 
 <style lang="scss">
