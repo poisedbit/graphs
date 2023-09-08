@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GraphingTool from "$lib/graphing-tool/index.svelte";
+	import GraphingTool from "$gt/index.svelte";
 </script>
 
 <!--

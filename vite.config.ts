@@ -8,7 +8,6 @@ export default defineConfig({
 			enabled: true,
 			provider: "v8",
 			reporter: ["html", "text"],
-			reportsDirectory: "./src/tests/coverage",
 		},
 		include: ["src/**/*.{test,spec}.{js,ts}"],
 		reporters: "verbose",
