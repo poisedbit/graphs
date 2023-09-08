@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { step } from "$lib/scripts/store";
 	import BtnNext from "./components/BtnNext.svelte";
-	import FileDropzone from "./components/FileDropzone.svelte";
+	import FilePicker from "./components/FilePicker.svelte";
 </script>
 
 <article>
 	<section>
 		<div>1— Choose files</div>
 		{#if $step === 1}
-			<FileDropzone />
+			<FilePicker />
 			<BtnNext />
 		{/if}
 	</section>
