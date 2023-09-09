@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FirstStep from "./components/FirstStep.svelte";
-	import Step from "./components/Step.svelte";
+	import FirstStep from "./graphing-tool/FirstStep.svelte";
+	import Step from "./graphing-tool/Step.svelte";
 
 	let pace: 0 | 1 | 2 = 0;
 </script>
