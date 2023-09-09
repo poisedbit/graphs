@@ -1,27 +1,34 @@
 <script lang="ts">
-	export let step: number;
+	export let pace: 0 | 1 | 2;
 </script>
 
-<nav style:justify-content={step > 0 ? "space-between" : "flex-end"}>
-	{#if step > 0}
-		<button type="button" on:click={() => (step -= 1)}>Back</button>
-	{/if}
-	{#if step < 2}
-		<button type="button" on:click={() => (step += 1)}>Next</button>
-	{/if}
-</nav>
+{#if pace > 0}
+	<nav>
+		<button class="left" type="button" on:click={() => (pace -= 1)}
+			>Back</button
+		>
+	</nav>
+{/if}
+{#if pace < 2}
+	<nav>
+		<button class="right" type="button" on:click={() => (pace += 1)}
+			>Next</button
+		>
+	</nav>
+{/if}
 
-<style lang="scss">
-	nav {
-		height: 15%;
-		padding: 0 2.5%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+<style lang="sass">
+	nav
+		width: 100%
+		padding: 0 2.5%
 
-	button {
-		width: 10%;
-		height: 2.5rem;
-	}
+	button
+		width: 10%
+		height: 2.5rem
+
+		&.left
+			float: left
+
+		&.right
+			float: right
 </style>

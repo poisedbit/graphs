@@ -9,17 +9,15 @@
 	<GraphingTool />
 </main>
 
-<style lang="scss">
-	header {
-		width: auto;
-		height: 5%;
-		padding: 0 5%;
-		display: flex;
-		align-items: center;
-	}
+<style lang="sass">
+	header
+		width: auto
+		height: 5%
+		padding: 0 5%
+		display: flex
+		align-items: center
 
-	main {
-		width: auto;
-		height: 95%;
-	}
+	main
+		width: auto
+		height: 95%
 </style>

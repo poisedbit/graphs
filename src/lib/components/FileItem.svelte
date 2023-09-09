@@ -9,8 +9,7 @@
 	<span class="file-item__size">{fmt_bytes(item.size)}</span>
 </div>
 
-<style lang="scss">
-	.file-item {
-		border: 1px solid black;
-	}
+<style lang="sass">
+	.file-item
+		border: 1px solid black
 </style>

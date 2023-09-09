@@ -1,17 +1,21 @@
 <script lang="ts">
+	import NavBtns from "./NavBtns.svelte";
+
 	export let active: boolean;
+	export let pace: 0 | 1 | 2;
 </script>
 
-<section style:width={active ? "100%" : "5%"}>
+<section style:width={active ? "100%" : "3%"}>
 	{#if active}
 		<slot />
+		<div>
+			<NavBtns bind:pace />
+		</div>
 	{/if}
 </section>
 
-<style lang="css">
-	section {
-		border: 1px solid black;
-		display: flex;
-		flex-direction: column;
-	}
+<style lang="sass">
+	section
+		display: flex
+		flex-direction: column
 </style>
