@@ -1,16 +1,7 @@
 import { freeze_objs } from "$lib/scripts/utils";
-import { sprdsht_files, step } from "./store";
+import { sprdsht_files } from "./store";
 
 // graphing-tool or gt
-const step_handler = {
-	rst() {
-		step.set(0);
-	},
-	up() {
-		step.update(n => n + 1);
-	},
-};
-
 const sprdsht_files_handler = {
 	up(files: FileList) {
 		sprdsht_files.update(arr =>
@@ -29,6 +20,6 @@ const sprdsht_files_handler = {
 	},
 };
 
-freeze_objs(step_handler, sprdsht_files_handler);
+freeze_objs(sprdsht_files_handler);
 
-export { step_handler, sprdsht_files_handler };
+export { sprdsht_files_handler };

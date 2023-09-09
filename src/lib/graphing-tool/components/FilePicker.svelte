@@ -9,7 +9,7 @@
 		sprdsht_files_handler.up(files);
 	}
 
-	$: files_len = $sprdsht_files.length;
+	$: f_len = $sprdsht_files.length;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -25,7 +25,7 @@
 		}
 	}}
 >
-	{#if files_len}
+	{#if f_len}
 		<div class="file-dz__item-container">
 			{#each $sprdsht_files as item}
 				<FileItem {item} />
@@ -35,7 +35,7 @@
 	<div class="btn-container">
 		<label class="btn-pick">
 			<input type="file" multiple hidden bind:files />
-			{!files_len ? "Pick files" : "Add more"}
+			{!f_len ? "Pick files" : "Add more"}
 		</label>
 	</div>
 </div>
