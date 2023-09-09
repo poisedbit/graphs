@@ -32,7 +32,10 @@
 			{/each}
 		</div>
 	{/if}
-	<div class="btn-container">
+	<div
+		class="btn-container"
+		style:justify-content={f_len !== 0 ? "flex-start" : "center"}
+	>
 		<label class="btn-pick">
 			<input type="file" multiple hidden bind:files />
 			{!f_len ? "Pick files" : "Add more"}
@@ -43,11 +46,16 @@
 <style lang="scss">
 	.file-dz {
 		width: auto;
-		height: 15rem;
+		height: 100%;
+		padding: 15%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		div {
+			border: 1px solid black;
+		}
 	}
 
 	.file-dz__item-container {
@@ -58,9 +66,12 @@
 	.btn-container {
 		width: 100%;
 		height: 15%;
+		display: flex;
+		align-items: center;
 	}
 
 	.btn-pick {
+		height: min-content;
 		border: 1px solid black;
 		cursor: pointer;
 	}

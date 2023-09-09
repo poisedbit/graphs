@@ -1,33 +1,31 @@
 <script lang="ts">
-	import BtnNext from "./components/BtnNext.svelte";
 	import FilePicker from "./components/FilePicker.svelte";
+	import NavBtns from "./components/NavBtns.svelte";
+	import Step from "./components/Step.svelte";
 
-	let step: number = 0;
+	let step: 0 | 1 | 2 = 0;
 </script>
 
 <article>
-	{#if !step}
-		<section>
-			<div>1— Choose files</div>
-			<FilePicker />
-			<BtnNext bind:step />
-		</section>
-	{:else if step === 1}
-		<section>
-			<div>2— Select chart type</div>
-			<BtnNext bind:step />
-		</section>
-	{:else if step === 2}
-		<section>
-			<div>3— Visualize and/or export!</div>
-		</section>
-	{/if}
+	<Step active={!step ? true : false}>
+		<div>1— Choose files</div>
+		<FilePicker />
+		<NavBtns bind:step />
+	</Step>
+	<Step active={step === 1 ? true : false}>
+		<div>2— Select chart type</div>
+		<NavBtns bind:step />
+	</Step>
+	<Step active={step === 2 ? true : false}>
+		<div>3— Visualize and/or export!</div>
+		<NavBtns bind:step />
+	</Step>
 </article>
 
 <style lang="scss">
 	article {
 		width: auto;
+		height: 100%;
 		display: flex;
-		flex-direction: column;
 	}
 </style>
