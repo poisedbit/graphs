@@ -1,10 +1,12 @@
-import { freeze_objs } from "$lib/scripts/utils";
-import { sprdsht_files } from "./store";
+import { freeze_objs } from "$lib/utils";
+import { writable } from "svelte/store";
 
-// graphing-tool or gt
-const sprdsht_files_handler = {
+// graphing-tool or $gt
+const sheets = writable<File[]>([]);
+
+const sheets_handler = {
 	up(files: FileList) {
-		sprdsht_files.update(arr =>
+		sheets.update(arr =>
 			[...arr, ...Array.from(files)].filter(
 				(file, index, self) =>
 					index ===
@@ -20,6 +22,6 @@ const sprdsht_files_handler = {
 	},
 };
 
-freeze_objs(sprdsht_files_handler);
+freeze_objs(sheets, sheets_handler);
 
-export { sprdsht_files_handler };
+export { sheets, sheets_handler };

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fmt_bytes } from "$lib/scripts/utils";
+	import { fmt_bytes } from "$lib/utils";
 
 	export let item: File;
 </script>

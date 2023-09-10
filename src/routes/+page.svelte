@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GraphingTool from "$lib/view/root/GraphingTool.svelte";
+	import GraphingTool from "$view/fragments/root/GraphingTool.svelte";
 </script>
 
 <header>

@@ -1,17 +1,16 @@
 <script lang="ts">
-	import FilePickerBtn from "$lib/components/FilePickerBtn.svelte";
-	import FileDropContainer from "$lib/components/FileDropContainer.svelte";
-	import FileViewer from "$lib/components/FileViewer.svelte";
-	import { sprdsht_files } from "$lib/scripts/store";
-	import { sprdsht_files_handler } from "$lib/scripts/store_handlers";
+	import FilePickerBtn from "$comps/FilePickerBtn.svelte";
+	import FileDropContainer from "$comps/FileDropContainer.svelte";
+	import FileViewer from "$comps/FileViewer.svelte";
+	import { sheets, sheets_handler } from "$view/stores/sheets";
 
 	let files: FileList;
 
 	$: if (files) {
-		sprdsht_files_handler.up(files);
+		sheets_handler.up(files);
 	}
 
-	$: f_len = $sprdsht_files.length;
+	$: f_len = $sheets.length;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -19,7 +18,7 @@
 	<span>1— Choose files</span>
 	<FileDropContainer bind:files>
 		{#if f_len}
-			<FileViewer items={$sprdsht_files} />
+			<FileViewer items={$sheets} />
 		{/if}
 		<div
 			class="btn-container"
