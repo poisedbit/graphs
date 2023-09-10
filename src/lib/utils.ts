@@ -1,4 +1,4 @@
-function fmt_bytes(bytes: number): string {
+export function fmt_bytes(bytes: number): string {
 	const digits: number = Math.floor(Math.log10(bytes) + 1);
 
 	if (digits <= 3) {
@@ -20,8 +20,6 @@ function fmt_bytes(bytes: number): string {
 	return "";
 }
 
-function freeze_objs(...objs: {}[]) {
+export function freeze_objs(...objs: {}[]) {
 	objs.forEach(o => Object.freeze(o));
 }
-
-export { fmt_bytes, freeze_objs };

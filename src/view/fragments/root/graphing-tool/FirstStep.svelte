@@ -1,6 +1,6 @@
 <script lang="ts">
+	import FileDropWrapper from "$comps/FileDropWrapper.svelte";
 	import FilePickerBtn from "$comps/FilePickerBtn.svelte";
-	import FileDropContainer from "$comps/FileDropContainer.svelte";
 	import FileViewer from "$comps/FileViewer.svelte";
 	import { sheets, sheets_handler } from "$view/stores/sheets";
 
@@ -8,15 +8,15 @@
 
 	$: if (files) {
 		sheets_handler.up(files);
+		console.log(files);
 	}
 
 	$: f_len = $sheets.length;
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<section>
-	<span>1— Choose files</span>
-	<FileDropContainer bind:files>
+<span>1— Choose files</span>
+<div class="file-dz">
+	<FileDropWrapper bind:files>
 		{#if f_len}
 			<FileViewer items={$sheets} />
 		{/if}
@@ -26,19 +26,19 @@
 		>
 			<FilePickerBtn multiple bind:files />
 		</div>
-	</FileDropContainer>
-</section>
+	</FileDropWrapper>
+</div>
 
 <style lang="sass">
-	section
+	.file-dz
 		width: auto
 		height: 100%
-		margin: 15%
+		margin: 10% 25%
+		border: 1px solid black
 		display: flex
 		flex-direction: column
 		align-items: center
 		justify-content: center
-		border: 1px solid black
 
 	.btn-container
 		width: 100%
