@@ -1,10 +1,11 @@
 <script lang="ts">
 	import FileItem from "./FileItem.svelte";
 
+	export let id: string | undefined = undefined;
 	export let items: File[] = [];
 </script>
 
-<div>
+<div {id} class="file-viewer">
 	{#each items as item}
 		<FileItem bind:item />
 	{/each}

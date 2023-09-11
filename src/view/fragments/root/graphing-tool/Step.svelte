@@ -5,12 +5,10 @@
 	export let pace: 0 | 1 | 2;
 </script>
 
-<section style:width={active ? "100%" : "3%"}>
+<section style:width={active ? "100%" : "5%"}>
 	{#if active}
 		<slot />
-		<div>
-			<NavBtns bind:pace />
-		</div>
+		<NavBtns bind:pace />
 	{/if}
 </section>
 
@@ -18,4 +16,5 @@
 	section
 		display: flex
 		flex-direction: column
+		border: 1px solid black
 </style>

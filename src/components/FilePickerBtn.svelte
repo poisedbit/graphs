@@ -1,14 +1,14 @@
 <script lang="ts">
 	export let label: string = "Add file";
-	export let id: string = "";
+	export let id: string | undefined = undefined;
 	export let accept: ReadonlyArray<string> = [];
 	export let multiple: boolean = false;
 	export let files: FileList;
 </script>
 
-<label>
+<label {id} class="file-picker-btn">
 	<input
-		{id}
+		class="file-picker-btn__input"
 		type="file"
 		accept={accept.toString()}
 		{multiple}

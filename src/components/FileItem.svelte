@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { fmt_bytes } from "$lib/utils";
 
+	export let id: string | undefined = undefined;
 	export let item: File;
 </script>
 
-<div class="file-item">
+<div {id} class="file-item">
 	<span class="file-item__name">{item.name}</span>
 	<span class="file-item__size">{fmt_bytes(item.size)}</span>
 </div>
