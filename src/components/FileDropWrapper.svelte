@@ -7,7 +7,6 @@
 <div
 	{id}
 	class="file-drop-wrapper"
-	style:all="inherit"
 	on:dragover|preventDefault
 	on:drop|preventDefault={e => {
 		if (e.dataTransfer && e.dataTransfer.files.length) {
