@@ -1,0 +1,15 @@
+.file-viewer {
+	width: 100%;
+	height: 100%;
+	padding: 0.625em;
+	overflow: auto;
+	scrollbar-gutter: auto;
+	display: flex;
+	flex-direction: column;
+
+	&__list {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.625em;
+	}
+}

@@ -1,0 +1,20 @@
+.file-item {
+	width: 10em;
+	height: 10em;
+	display: inline-flex;
+	flex-direction: column-reverse;
+	justify-content: end;
+
+	&__name {
+		padding: 0 0.625em 0.625em;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-align: center;
+	}
+
+	&__size {
+		text-align: end;
+		display: none;
+	}
+}

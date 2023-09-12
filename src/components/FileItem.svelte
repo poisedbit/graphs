@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fmt_bytes } from "$lib/utils";
+	import "$style/file-item.scss";
 
 	export let id: string | undefined = undefined;
 	export let item: File;

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import "$style/file-picker-btn.scss";
+
 	export let label: string = "Add file";
 	export let id: string | undefined = undefined;
 	export let accept: ReadonlyArray<string> = [];
@@ -19,12 +21,6 @@
 </label>
 
 <style lang="sass">
-	label
-		height: 2.5rem
-		padding: 0.5rem 1rem
+	.file-picker-btn
 		border: 1px solid black
-		cursor: pointer
-		display: flex
-		align-items: center
-		justify-content: center
 </style>

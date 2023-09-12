@@ -15,10 +15,10 @@
 
 <span>1— Choose files</span>
 <div class="file-dz">
-	<div class="file-dz__inner">
-		<FileDropWrapper bind:files>
+	<FileDropWrapper bind:files>
+		<div class="file-dz__inner">
 			{#if f_len}
-				<FileViewer items={$sheets} />
+				<FileViewer items={$sheets} center_content />
 			{/if}
 			<div
 				class="file-dz__btns"
@@ -26,29 +26,31 @@
 			>
 				<FilePickerBtn multiple bind:files />
 			</div>
-		</FileDropWrapper>
-	</div>
+		</div>
+	</FileDropWrapper>
 </div>
 
 <style lang="sass">
 	.file-dz
-		width: auto
+		width: 100%
 		height: 100%
-		margin: 10% 25%
-		border: 1px solid black
 		display: flex
+		align-items: center
 		justify-content: center
 
-		&__inner 
-			width: 100%
-			height: 100%
+		&__inner
+			// width: 1035px
+			width: 66.375rem + 0.125rem
+			height: 39.6875rem
+			padding: 1rem
+			border: 1px solid black
 			display: flex
-			justify-content: center
 			flex-direction: column
+			align-items: center
+			justify-content: center
 
 		&__btns
 			width: 100%
-			height: 15%
+			padding: 2.5rem
 			display: flex
-			align-items: center
 </style>
