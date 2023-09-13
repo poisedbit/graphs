@@ -5,6 +5,9 @@ import { writable } from "svelte/store";
 const sheets = writable<File[]>([]);
 
 const sheets_handler = {
+	reset() {
+		sheets.set([]);
+	},
 	up(files: FileList) {
 		sheets.update(arr =>
 			[...arr, ...Array.from(files)].filter(

@@ -19,8 +19,3 @@
 	/>
 	{label}
 </label>
-
-<style lang="sass">
-	.file-picker-btn
-		border: 1px solid black
-</style>

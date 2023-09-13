@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FirstStep from "./graphing-tool/FirstStep.svelte";
+	import FilePanel from "./graphing-tool/FilePanel.svelte";
 	import Step from "./graphing-tool/Step.svelte";
 
 	let pace: 0 | 1 | 2 = 0;
@@ -7,7 +7,7 @@
 
 <article>
 	<Step active={!pace ? true : false} bind:pace>
-		<FirstStep />
+		<FilePanel />
 	</Step>
 	<Step active={pace === 1 ? true : false} bind:pace>
 		<span>2— Select chart type</span>

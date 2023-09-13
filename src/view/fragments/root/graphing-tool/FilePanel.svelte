@@ -14,9 +14,9 @@
 </script>
 
 <span>1— Choose files</span>
-<div class="file-dz">
+<div class="file-panel">
 	<FileDropWrapper bind:files>
-		<div class="file-dz__inner">
+		<div class="file-panel__inner">
 			{#if f_len}
 				<FileViewer
 					items={[...$sheets]}
@@ -25,17 +25,24 @@
 				/>
 			{/if}
 			<div
-				class="file-dz__btns"
-				style:justify-content={f_len !== 0 ? "flex-start" : "center"}
+				class="panel-btns"
+				style:justify-content={f_len !== 0 ? "space-between" : "center"}
 			>
 				<FilePickerBtn multiple bind:files />
+				{#if f_len}
+					<button
+						class="panel-btns__reset"
+						type="button"
+						on:click={sheets_handler.reset}>Delete all</button
+					>
+				{/if}
 			</div>
 		</div>
 	</FileDropWrapper>
 </div>
 
 <style lang="sass">
-	.file-dz
+	.file-panel
 		width: 100%
 		height: 100%
 		display: flex
@@ -53,8 +60,12 @@
 			align-items: center
 			justify-content: center
 
-		&__btns
-			width: 100%
-			padding: 2.5rem
-			display: flex
+	.panel-btns
+		width: 100%
+		padding: 2.5rem
+		display: flex
+		gap: 1rem
+
+		:global(*)
+			border: 1px solid black
 </style>

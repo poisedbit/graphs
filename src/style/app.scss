@@ -18,6 +18,9 @@ button {
 	&[type="button"] {
 		appearance: none;
 		border: none;
+		background: none;
+		font-size: 1rem;
+		cursor: pointer;
 	}
 }
 
