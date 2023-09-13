@@ -18,7 +18,11 @@
 	<FileDropWrapper bind:files>
 		<div class="file-dz__inner">
 			{#if f_len}
-				<FileViewer items={$sheets} center_content />
+				<FileViewer
+					items={[...$sheets]}
+					center_content
+					on:del={e => sheets_handler.del(e.detail.index)}
+				/>
 			{/if}
 			<div
 				class="file-dz__btns"

@@ -14,8 +14,8 @@
 		type="file"
 		accept={accept.toString()}
 		{multiple}
-		bind:files
 		hidden
+		bind:files
 	/>
 	{label}
 </label>

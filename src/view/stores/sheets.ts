@@ -20,6 +20,9 @@ const sheets_handler = {
 			)
 		);
 	},
+	del(index: number) {
+		sheets.update(arr => arr.toSpliced(index, 1));
+	},
 };
 
 freeze_objs(sheets, sheets_handler);

@@ -1,6 +1,7 @@
 .file-item {
 	width: 10em;
 	height: 10em;
+	position: relative;
 	display: inline-flex;
 	flex-direction: column-reverse;
 	justify-content: end;
@@ -16,5 +17,14 @@
 	&__size {
 		text-align: end;
 		display: none;
+	}
+
+	&__btn-del {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 0.625em;
+		right: 0.625em;
+		cursor: pointer;
 	}
 }
