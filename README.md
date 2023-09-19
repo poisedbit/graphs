@@ -32,14 +32,6 @@ This is a work in progress. Later on I'm gonna be adding a to do list for every 
 - Playwright
 - Sass
 
-## Some questions
-
-—No one has asked me these questions, though. Why? Because I have no friends.—
-
-### Graphs or Charts?
-
-I suppose no one cares but this' still an interesting topic to look at. This starts with the fact that my first language isn't english, but spanish, so when the idea for this project came up to me what I was always thinking was the spanish word "gráficas", which translated literally means "graphs". The interesting part comes with the difference between graphs and charts which both refer to different groups of diagrams, the former being a subkind of the latter. But in spanish, there's no literal translation for "charts", so both graphs and charts are known by the same word and are indistinguishable from each other —besides the context in a given conversation, or a more specific aspect like the mathematical relationships intrinsic of graphs—.
-
 ## License
 
 [MIT](LICENSE)
