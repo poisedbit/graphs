@@ -1,11 +1,10 @@
-import { freeze_objs } from "$lib/utils";
 import { writable } from "svelte/store";
 
-// graphing-tool or $gt
+// graphing-tool
 const sheets = writable<File[]>([]);
 
 const sheets_handler = {
-	reset() {
+	rst() {
 		sheets.set([]);
 	},
 	up(files: FileList) {
@@ -26,8 +25,6 @@ const sheets_handler = {
 	del(index: number) {
 		sheets.update(arr => arr.toSpliced(index, 1));
 	},
-};
-
-freeze_objs(sheets, sheets_handler);
+} as const;
 
 export { sheets, sheets_handler };

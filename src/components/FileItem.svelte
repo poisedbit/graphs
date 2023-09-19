@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fmt_bytes } from "$lib/utils";
+	import { fmt_byte_size } from "$lib/utils";
 	import "$style/file-item.scss";
 	import { createEventDispatcher } from "svelte";
 
@@ -16,7 +16,7 @@
 
 <div {id} class="file-item" bind:this={self}>
 	<span class="file-item__name">{item.name}</span>
-	<span class="file-item__size">{fmt_bytes(item.size)}</span>
+	<span class="file-item__size">{fmt_byte_size(item.size)}</span>
 	<button class="file-item__btn-del" type="button" on:click={del} />
 </div>
 

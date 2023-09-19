@@ -33,7 +33,7 @@
 					<button
 						class="panel-btns__reset"
 						type="button"
-						on:click={sheets_handler.reset}>Delete all</button
+						on:click={sheets_handler.rst}>Delete all</button
 					>
 				{/if}
 			</div>

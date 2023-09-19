@@ -1,25 +1,11 @@
-export function fmt_bytes(bytes: number): string {
-	const digits: number = Math.floor(Math.log10(bytes) + 1);
+export function fmt_byte_size(size: number): string {
+	const kilobyte: number = 1000;
+	const pow: number = Math.floor(Math.log(size) / Math.log(kilobyte));
+	const units = ["B", "KB", "MB", "GB"] as const;
 
-	if (digits <= 3) {
-		return `${bytes} B`;
+	if (pow === 0) {
+		return `${size} B`;
 	}
 
-	if (digits <= 6) {
-		return `${(bytes / 10 ** 3).toFixed(2)} KB`;
-	}
-
-	if (digits <= 9) {
-		return `${(bytes / 10 ** 6).toFixed(2)} MB`;
-	}
-
-	if (digits > 9) {
-		return `${(bytes / 10 ** 9).toFixed(2)} GB`;
-	}
-
-	return "";
-}
-
-export function freeze_objs(...objs: {}[]) {
-	objs.forEach(o => Object.freeze(o));
+	return `${(size / kilobyte ** pow).toFixed()} ${units[pow]}`;
 }
