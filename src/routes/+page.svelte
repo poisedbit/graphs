@@ -1,12 +1,12 @@
 <script lang="ts">
-	import GraphingTool from "$view/fragments/root/GraphingTool.svelte";
+	import GraphsApp from "$view/fragments/GraphsApp.svelte";
 </script>
 
 <header>
 	<h1>Graphs</h1>
 </header>
 <main>
-	<GraphingTool />
+	<GraphsApp />
 </main>
 
 <style lang="sass">

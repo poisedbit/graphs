@@ -2,6 +2,7 @@
 	import FileDropWrapper from "$comps/FileDropWrapper.svelte";
 	import FilePickerBtn from "$comps/FilePickerBtn.svelte";
 	import FileViewer from "$comps/FileViewer.svelte";
+	import { mime_db } from "$lib/utils";
 	import { sheets, sheets_handler } from "$view/stores/sheets";
 
 	let files: FileList;
@@ -28,7 +29,7 @@
 				class="panel-btns"
 				style:justify-content={f_len !== 0 ? "space-between" : "center"}
 			>
-				<FilePickerBtn multiple bind:files />
+				<FilePickerBtn accept={mime_db} multiple bind:files />
 				{#if f_len}
 					<button
 						class="panel-btns__reset"

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import "$style/file-viewer.scss";
 	import { afterUpdate, createEventDispatcher } from "svelte";
 	import FileItem from "./FileItem.svelte";
+	import "$style/file-viewer.scss";
 
 	export let id: string | undefined = undefined;
 	export let center_content: boolean = false;

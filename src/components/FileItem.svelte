@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { createEventDispatcher } from "svelte";
 	import { fmt_byte_size } from "$lib/utils";
 	import "$style/file-item.scss";
-	import { createEventDispatcher } from "svelte";
 
 	export let id: string | undefined = undefined;
 	export let item: File;

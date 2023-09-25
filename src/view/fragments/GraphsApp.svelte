@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FilePanel from "./graphing-tool/FilePanel.svelte";
-	import Step from "./graphing-tool/Step.svelte";
+	import FilePanel from "./graphs_app/FilePanel.svelte";
+	import Step from "./graphs_app/Step.svelte";
 
 	let pace: 0 | 1 | 2 = 0;
 </script>
