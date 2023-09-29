@@ -1,0 +1,3 @@
+{
+	"rust-analyzer.linkedProjects": ["src/lib/wasm/Cargo.toml"]
+}

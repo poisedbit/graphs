@@ -3,8 +3,9 @@
 	"compilerOptions": {
 		//modules
 		"allowImportingTsExtensions": true,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
 		"resolveJsonModule": true,
-		"types": ["@playwright/test", "@testing-library/svelte", "vitest"],
 
 		//emit
 		"downlevelIteration": true,
@@ -23,6 +24,8 @@
 		"isolatedModules": true,
 
 		//language and env
+		"lib": ["ESNext"],
+		"target": "ESNext",
 		"useDefineForClassFields": true,
 
 		//output formatting
