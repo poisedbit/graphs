@@ -10,7 +10,7 @@ The goal, aside from everything mentioned above, is to deliver a capable, modern
 
 This is a work in progress. Later on I'm gonna be adding a to do list for every check mark that has to be ticked off so that we can arrive to a feature-complete state.
 
-- [ ] Get a cool new project name —I got an idea but'll be saving it for later—.
+- [x] Get a cool new project name —Got it, but won't replace it yet—.
 
 ## Planned Features Sep-Oct 2023
 
@@ -24,9 +24,10 @@ This is a work in progress. Later on I'm gonna be adding a to do list for every 
 
 ## Technology Stack
 
-- D3.js
 - SvelteKit
 - TypeScript
+- Wasm
+- Rust
 - Vite
 - Vitest
 - Playwright
