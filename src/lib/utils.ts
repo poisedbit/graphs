@@ -9,10 +9,14 @@ export function fmt_byte_size(size: number): string {
 		return `${size} B`;
 	}
 
-	return `${(size / kilobyte ** pow).toFixed()} ${units[pow]}`;
+	return `${(size / kilobyte ** pow).toFixed(2)} ${units[pow]}`;
 }
 
-export function rand_uint(limit: number) {
-	limit < 0 && (limit = 10);
-	return Math.ceil(Math.random() * limit);
+export function rand_uint(max: number = 255, min: number = 0) {
+	if (!max || max <= 0) max = 255;
+	if (max < min) min = 0;
+	if (min < 0) min = 0;
+	return Math.floor(
+		Math.random() * (Math.floor(max) - Math.ceil(min) + 1) + Math.ceil(min)
+	);
 }
