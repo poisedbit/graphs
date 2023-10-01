@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.72% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.72% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,47 +88,47 @@
 <a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const mime_db: ReadonlyArray&lt;string&gt; = ["text/csv"];
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function fmt_byte_size(size: number): string {</span>
-<span class="cstat-no" title="statement not covered" >	const kilobyte: number = 1000;</span>
-<span class="cstat-no" title="statement not covered" >	const pow: number = Math.floor(Math.log(size) / Math.log(kilobyte));</span>
-<span class="cstat-no" title="statement not covered" >	const units = ["B", "KB", "MB", "GB"] as const;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >	if (pow === 0) {</span>
-<span class="cstat-no" title="statement not covered" >		return `${size} B`;</span>
-<span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >	return `${(size / kilobyte ** pow).toFixed(2)} ${units[pow]}`;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export function fmt_byte_size(size: number): string {
+	const kilobyte: number = 1000;
+	const pow: number = Math.floor(Math.log(size) / Math.log(kilobyte));
+	const units = ["B", "KB", "MB", "GB"] as const;
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function rand_uint(max: number = 255, min: number = 0) {</span>
-<span class="cstat-no" title="statement not covered" >	if (!max || max &lt;= 0) max = 255;</span>
-<span class="cstat-no" title="statement not covered" >	if (max &lt; min) min = 0;</span>
-<span class="cstat-no" title="statement not covered" >	if (min &lt; 0) min = 0;</span>
-<span class="cstat-no" title="statement not covered" >	return Math.floor(</span>
-<span class="cstat-no" title="statement not covered" >		Math.random() * (Math.floor(max) - Math.ceil(min) + 1) + Math.ceil(min)</span>
-<span class="cstat-no" title="statement not covered" >	);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+	if (pow === 0) {
+		return `${size} B`;
+	}
+&nbsp;
+	return `${(size / kilobyte ** pow).toFixed(2)} ${units[pow]}`;
+}
+&nbsp;
+export function rand_uint(max: number = 255, min: number = 0) {
+	if (!max || max &lt;= 0) max = 255;
+	if (max &lt; min) min = 0;
+	if (min &lt; 0) min = 0;
+	return Math.floor(
+		Math.random() * (Math.floor(max) - Math.ceil(min) + 1) + Math.ceil(min)
+	);
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -136,7 +136,7 @@ export <span class="fstat-no" title="function not covered" >function rand_uint(m
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-01T02:59:06.547Z
+                at 2023-10-01T03:19:09.773Z
             </div>
         <script src="prettify.js"></script>
         <script>
