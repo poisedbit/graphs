@@ -13,12 +13,3 @@ pub async fn read_blob(blob: Blob) -> Result<JsValue, JsValue> {
 
     Err(JsValue::UNDEFINED)
 }
-
-/*
-   pending:
-       - finishi lib.rs
-           - try with returning the promise, and catching beforehand
-           - check typings with wasm-bindgen
-       - coverage doesn't works, deletes src/test/coverage every time ``bun test:unit`` is executed
-
-*/

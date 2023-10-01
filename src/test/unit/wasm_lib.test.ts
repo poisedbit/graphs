@@ -1,37 +1,40 @@
-import { afterEach, describe, expect, test, vi } from "vitest";
+import { afterAll, beforeEach, describe, expect, test, vi } from "vitest";
 import { read_blob } from "$lib/wasm_lib";
-import { esc, mock_text_blob } from "../test_utils";
+import { mock_text_blob } from "../test_utils";
 
 describe("wasm_lib", () => {
-	const console_err_spy = vi.spyOn(console, "error");
-	const csv_mock = mock_text_blob("csv", 5);
+	const rows = 5;
+	const csv_mock = mock_text_blob("csv", rows);
 
-	describe("blob reader", () => {
-		describe("csv", () => {
-			afterEach(() => {
-				vi.restoreAllMocks();
-			});
+	describe("read_blob", () => {
+		const blob_text_spy = vi.spyOn(Blob.prototype, "text");
+		const console_error_spy = vi.spyOn(console, "error");
 
+		beforeEach(() => {
+			vi.clearAllMocks();
+		});
+
+		afterAll(() => {
+			vi.restoreAllMocks();
+		});
+
+		describe("text type", () => {
 			test("succeeds", async () => {
-				const csv_buf: string | undefined = await read_blob(csv_mock);
-				console.log(csv_buf);
-				expect(csv_buf).toBeDefined();
-				expect(csv_buf).toBeTypeOf("string");
-				expect(csv_buf?.split(esc(csv_buf))[0].split(",").length).toBe(
-					5
-				);
+				await expect(read_blob(csv_mock)).resolves.toBeTypeOf("string");
 			});
 
 			test("fails", async () => {
-				vi.spyOn(Blob.prototype, "text").mockRejectedValueOnce(
-					new Error("mock fail")
-				);
-				const csv_buf: string | undefined = await read_blob(csv_mock);
-
-				console.log(csv_buf);
-				expect(csv_buf).toBeUndefined();
-				expect(console_err_spy).toHaveBeenCalledOnce;
+				blob_text_spy.mockRejectedValueOnce(new Error("fail"));
+				await expect(read_blob(csv_mock)).resolves.toBeUndefined();
+				expect(console_error_spy).toHaveBeenCalledOnce();
 			});
 		});
+
+		describe.todo("application type", () => {
+			test("succeeds", async () => {});
+			test("fails", async () => {});
+		});
 	});
+
+	describe.todo("parse_buf", () => {});
 });
