@@ -1,9 +1,9 @@
-import { fmt_byte_size, rand_uint } from "$lib/utils";
 import { afterAll, beforeEach, describe, expect, test, vi } from "vitest";
+import { fmt_byte_size, rand_uint } from "$lib/utils";
 
 describe("utils", () => {
 	describe("fmt_byte_size", () => {
-		test("return formmating for size lower than a kb", () => {
+		test("return formmating for a size lower than a kb", () => {
 			expect(fmt_byte_size(256)).toBe("256 B");
 		});
 
@@ -28,7 +28,7 @@ describe("utils", () => {
 			vi.restoreAllMocks();
 		});
 
-		test("reassign max when it is falsy or less than 0", () => {
+		test("reassign max when it's equal or less than 0", () => {
 			expect(rand_uint(-15)).toBe(0);
 			expect(rand_uint(-30)).toBe(128);
 			expect(rand_uint(-45)).toBe(255);

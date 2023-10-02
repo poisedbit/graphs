@@ -1,12 +1,12 @@
 import { afterAll, beforeEach, describe, expect, test, vi } from "vitest";
-import { read_blob } from "$lib/wasm_lib";
+import { read } from "$lib/io";
 import { mock_text_blob } from "../test_utils";
 
-describe("wasm_lib", () => {
+describe("io", () => {
 	const rows = 5;
 	const csv_mock = mock_text_blob("csv", rows);
 
-	describe("read_blob", () => {
+	describe("read", () => {
 		const blob_text_spy = vi.spyOn(Blob.prototype, "text");
 		const console_error_spy = vi.spyOn(console, "error");
 
@@ -20,12 +20,12 @@ describe("wasm_lib", () => {
 
 		describe("text type", () => {
 			test("succeeds", async () => {
-				await expect(read_blob(csv_mock)).resolves.toBeTypeOf("string");
+				await expect(read(csv_mock)).resolves.toBeTypeOf("string");
 			});
 
 			test("fails", async () => {
 				blob_text_spy.mockRejectedValueOnce(new Error("fail"));
-				await expect(read_blob(csv_mock)).resolves.toBeUndefined();
+				await expect(read(csv_mock)).resolves.toBeUndefined();
 				expect(console_error_spy).toHaveBeenCalledOnce();
 			});
 		});
