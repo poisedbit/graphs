@@ -11,7 +11,7 @@
 		"t:unit": "vitest --ui",
 		"t:e2e": "playwright test",
 		"t": "pnpm run test:e2e && pnpm run test:unit",
-		"wasm:build": "wasm-pack build ./src/lib/wasm --no-pack",
+		"wasm:build": "wasm-pack build ./src/lib/tabular --no-pack",
 		"repo:build": "pnpm wasm:build"
 	},
 	"devDependencies": {

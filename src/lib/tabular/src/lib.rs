@@ -3,7 +3,7 @@ use wasm_bindgen_futures::JsFuture;
 use web_sys::Blob;
 
 #[wasm_bindgen]
-pub async fn read_blob(blob: Blob) -> Result<JsValue, JsValue> {
+pub async fn read(blob: Blob) -> Result<JsValue, JsValue> {
     let blob_type: String = blob.type_();
     let l_type: &str = blob_type.split("/").next().unwrap();
 
