@@ -2,6 +2,8 @@
     width: $w;
     height: $h;
     position: relative;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
     display: inline-flex;
     flex-direction: column-reverse;
     justify-content: end;
@@ -14,6 +16,8 @@
     appearance: none;
     border: none;
     border-radius: 1.25em;
+    background-color: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
     font-size: 0.95em;
     font-weight: 600;
     cursor: pointer;
