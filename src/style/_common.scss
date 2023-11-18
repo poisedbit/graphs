@@ -1,0 +1,28 @@
+@mixin card($w, $h) {
+    width: $w;
+    height: $h;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column-reverse;
+    justify-content: end;
+}
+
+@mixin button($w: auto, $h: 2.5em) {
+    width: $w;
+    height: $h;
+    padding: 0 0.625em;
+    appearance: none;
+    border: none;
+    border-radius: 1.25em;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        filter: brightness(0.85);
+    }
+}
