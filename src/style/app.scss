@@ -57,42 +57,40 @@
     --color-on-error-container: #ffb4ab;
 
     color-scheme: light dark;
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-}
 
-// TODO(FIX): variables not overwritten on light mode
-@media (prefers-color-scheme: light) {
-    :root {
+    &.light {
         --color-primary: #85468d;
-        --color-on-primary: #ffffff;
-        --color-primary-container: #ffd6fe;
-        --color-on-primary-container: #35003f;
         --color-secondary: #6b586b;
-        --color-on-secondary: #ffffff;
-        --color-secondary-container: #f4dbf1;
-        --color-on-secondary-container: #251626;
         --color-tertiary: #82524a;
-        --color-on-tertiary: #ffffff;
-        --color-tertiary-container: #ffdad4;
-        --color-on-tertiary-container: #33110c;
         --color-error: #ba1a1a;
-        --color-on-error: #ffffff;
-        --color-error-container: #ffdad6;
-        --color-on-error-container: #410002;
         --color-background: #fffbff;
-        --color-on-background: #1e1a1d;
         --color-surface: #fffbff;
-        --color-on-surface: #1e1a1d;
         --color-surface-variant: #ecdfe8;
-        --color-on-surface-variant: #4d444c;
         --color-outline: #7e747d;
         --color-outline-variant: #d0c3cc;
         --color-shadow: #000000;
         --color-scrim: #000000;
         --color-inverse-surface: #332f32;
-        --color-inverse-on-surface: #f7eef3;
         --color-inverse-primary: #f7adfc;
+
+        --color-on-primary: #ffffff;
+        --color-on-secondary: #ffffff;
+        --color-on-tertiary: #ffffff;
+        --color-on-error: #ffffff;
+        --color-on-background: #1e1a1d;
+        --color-on-surface: #1e1a1d;
+        --color-on-surface-variant: #4d444c;
+        --color-inverse-on-surface: #f7eef3;
+
+        --color-primary-container: #ffd6fe;
+        --color-secondary-container: #f4dbf1;
+        --color-tertiary-container: #ffdad4;
+        --color-error-container: #ffdad6;
+
+        --color-on-primary-container: #35003f;
+        --color-on-secondary-container: #251626;
+        --color-on-tertiary-container: #33110c;
+        --color-on-error-container: #410002;
     }
 }
 
@@ -101,6 +99,11 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
 }
 
 button {

@@ -1,17 +1,16 @@
 <script lang="ts">
-    import { setup_theme } from "$lib/theme";
-    import { onMount } from "svelte";
-
     let expanded = false;
     let cs = "light dark";
 
     $: {
         document.documentElement.style.setProperty("color-scheme", cs);
+        document.documentElement.classList.toggle(
+            "light",
+            cs === "light" ||
+                (!window.matchMedia("(prefers-color-scheme: dark)") &&
+                    cs === "light dark")
+        );
     }
-
-    onMount(() => {
-        setup_theme();
-    });
 </script>
 
 <svelte:document
@@ -71,9 +70,9 @@
         
         &__menu
             margin-top: .0625em
-            padding: .625em
+            // padding: .625em
             position: absolute
-            background-color: grey
+            background-color: transparent
             list-style: none
             
             button
